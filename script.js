@@ -103,5 +103,43 @@ const validateEmail = (email) => {
   };
 
 
-  /*................signup form.....................*/
+  /*................login form.....................*/
 const loginForm = document.querySelector('#loginform')
+const loginuname = document.querySelector('#lusername');
+const loginpwd = document.querySelector('#lpassword');
+
+loginForm.addEventListener('submit',(event)=>{
+    event.preventDefault()
+    loginValidateInputs()
+})
+
+function loginValidateInputs(){
+    const usernameVal = loginuname.value.trim()
+    const passwordVal = loginpwd.value.trim()
+    let success = true
+
+    if(usernameVal===''){
+        success=false;
+        setError(loginuname,'Username is required')
+    }
+    else{
+        setSuccess(loginuname)
+    }
+
+  
+    if(passwordVal === ''){
+        success= false;
+        setError(loginpwd,'Password is required')
+    }
+    else if(passwordVal.length<8){
+        success = false;
+        setError(loginpwd,'Password must be atleast 8 characters long')
+    }
+    else{
+        setSuccess(loginpwd)
+    }
+
+    return success;
+
+}
+

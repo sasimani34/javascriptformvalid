@@ -11,16 +11,16 @@
     background-color: antiquewhite;
     border-radius: 15px;
   }
-  .form-group .error{
+  .sform-group .error{
     color:rgb(242, 18, 18);
     font-size:16px;
     margin-top: 5px;
 }
 
-.form-group.success input{
+.sform-group.success input{
     border-color: #0cc477;
 }
 
-.form-group.error input{
+.sform-group.error input{
     border-color:rgb(206, 67, 67);
 }

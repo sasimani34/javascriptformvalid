@@ -21,8 +21,44 @@
         </div>
       </div>
   
-      <script src="script.js">
-  
-      </script>
+      <script>
+                /*..............................toDoList.............................*/
+        var addbtn =document.querySelector("#add")
+        var listdiv =document.getElementById("todoList")
+        var input =document.getElementById("todoinput")
+
+        let todosarr = []
+
+        //window load
+        window.onload = ()=>{
+            todosarr = JSON.parse(localStorage.getItem('todos')) || []
+            todosarr.forEach(todo=>addtodolist(todo))
+        }
+
+
+        addbtn.addEventListener('click',()=>{
+            
+            todosarr.push(input.value)
+            localStorage.setItem('todosarr',JSON.stringify(todosarr))
+            addtodolist(input.value)
+            input.value= ''
+            
+            
+        })
+        function addtodolist(todo){
+            var paraele = document.createElement('p')
+            paraele.innerText =todo
+            paraele.innerHTML += "<button onclick='deleteitem(event)'>delete</button>"
+            listdiv.appendChild(paraele)
+            // listdiv.appendChild(paraele)
+            // listdiv.innerHTML +=  "<button onclick='deleteitem(event)'>delete</button>"
+        }
+
+        function deleteitem(event){
+            event.target.parentElement.remove()
+        }
+
+
+</script>
 </body>
 </html>

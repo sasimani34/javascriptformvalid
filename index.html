@@ -23,14 +23,12 @@
                 <a class="nav-link active text-white align-items-center fs-4" aria-current="page" href="#bannerimage">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white"href="#signupform">
+                <a class="nav-link text-white"href="signup.html">
                 <button class="btn btn-outline-success  my-2 my-sm-0" type="submit">Signup</button></a>
               </li>
-             
-             
-             
+
               <li class="nav-item">
-                <a class="nav-link text-white"href="#logincontainer">
+                <a class="nav-link text-white"href="login.html">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button></a>
               </li>
             </ul>
@@ -43,68 +41,7 @@
         <h1 class="text-black">Form Validation</h1>
       </div>
     </div>
-     <!--signup section-->
-     <div class="container-fluid" style="height:100vh" id="signupform">
-        <form id="form"  class="mx-auto" style="width: 500px; height: 80vh;">
-            <h1 class="text-center p-2">Signup</h1>
-            <div class="sform-group p-2">
-              <label for="username" >Username</label>
-              
-                <input type="text" class="form-control" id="username" name="username">
-            
-              <div class="error"></div>
-            </div>
-            <div class="sform-group p-2">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email">
-              <div class="error"></div>
-            </div>
-            <div class="sform-group p-2">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password">
-                <div class="error"></div>
-            </div>
-            <div class="sform-group p-2">
-                <label for="cpassword">Confirm Password</label>
-                <input type="password" class="form-control" id="cpassword" name="cpassword">
-                <div class="error"></div>
-              </div>
-            <button type="submit" class="btn btn-primary w-100 p-2">Submit</button>
-            <p class="text-center">Already an user?<a href="#logincontainer">Login</a></p>
-          </form>
-     </div>
-
-      <!--login section-->
-      <div class="container-fluid" style="height:100vh" id="logincontainer">
-        <form id="loginform"  class="mx-auto " style="width: 500px;height: 80vh; ">
-            <h1 class="text-center p-2">Login</h1>
-            <div class="lform-group p-2">
-              <label for="lusername" >Username</label>
-              
-                <input type="text" class="form-control" id="lusername" name="lusername">
-            
-              <div class="error"></div>
-            </div>
-            <div class="lform-group p-2">
-                <label for="lpassword">Password</label>
-                <input type="password" class="form-control" id="lpassword" name="lpassword">
-                <div class="error"></div>
-            </div>
-            <button type="submit" class="btn btn-primary w-100 mt-2">Submit</button>
-          </form>
-     </div>
-    <!--todolist section-->
-    <div class="container-fluid w-100"  style="height:100vh" id="todolistpage">
-      <div id="todowrap" style="height:80vh" >
-          <h2 class="justify-content-center">Todo List</h2>
-          <input type="text" id="todoinput">
-          <button id="add">Add</button>
-          <div id="todoList" class="bg-warning mt-2 w-25" style="height:50vh">
-              <p>Todo list</p>
-          </div>
-      </div>
-    </div>
-
+     
     <script src="script.js">
 
     </script>

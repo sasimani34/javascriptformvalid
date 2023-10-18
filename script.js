@@ -18,6 +18,7 @@ form.addEventListener('submit',(event)=>{
     
         event.preventDefault()
         validateInputs()
+        alert("Registered Successfully!");
     
 })
 
@@ -33,6 +34,7 @@ function validateInputs(){
         setError(username,'Username is required')
     }
     else{
+        localStorage.setItem("username", usernameVal);
         setSuccess(username)
     }
 
@@ -57,6 +59,7 @@ function validateInputs(){
         setError(password,'Password must be atleast 8 characters long')
     }
     else{
+        
         setSuccess(password)
     }
 
@@ -69,6 +72,7 @@ function validateInputs(){
         setError(cpassword,'Password does not match')
     }
     else{
+        localStorage.setItem("password", cpasswordVal);
         setSuccess(cpassword)
     }
 
@@ -116,30 +120,52 @@ loginForm.addEventListener('submit',(event)=>{
 function loginValidateInputs(){
     const usernameVal = loginuname.value.trim()
     const passwordVal = loginpwd.value.trim()
-    let success = true
-
-    if(usernameVal===''){
-        success=false;
-        setError(loginuname,'Username is required')
-    }
-    else{
-        setSuccess(loginuname)
-    }
-
-  
-    if(passwordVal === ''){
-        success= false;
-        setError(loginpwd,'Password is required')
-    }
-    else if(passwordVal.length<8){
-        success = false;
-        setError(loginpwd,'Password must be atleast 8 characters long')
-    }
-    else{
-        setSuccess(loginpwd)
+    const getUname = localStorage.getItem("username");
+    const getPassword = localStorage.getItem("password");
+    
+    if (usernameVal === getUname && passwordVal === getPassword) {
+        alert("Login Successfully!");
+        window.location.href = "todolist.html";
+    } else {
+        alert("Invalid username or password.");
     }
 
-    return success;
+    
+}
 
+/*..............................toDoList.............................*/
+var addbtn =document.querySelector("#add")
+var listdiv =document.getElementById("todoList")
+var input =document.getElementById("todoinput")
+
+let todosarr = []
+
+//window load
+window.onload = ()=>{
+    todosarr = JSON.parse(localStorage.getItem('todos')) || []
+    todosarr.forEach(todo=>addtodolist(todo))
+}
+
+
+addbtn.addEventListener('click',()=>{
+    
+    todosarr.push(input.value)
+    localStorage.setItem('todosarr',JSON.stringify(todosarr))
+    addtodolist(input.value)
+    input.value= ''
+    
+    
+})
+function addtodolist(todo){
+    var paraele = document.createElement('p')
+    paraele.innerText =todo
+    paraele.innerHTML += "<button onclick='deleteitem(event)'>delete</button>"
+    listdiv.appendChild(paraele)
+    // listdiv.appendChild(paraele)
+    // listdiv.innerHTML +=  "<button onclick='deleteitem(event)'>delete</button>"
+}
+
+function deleteitem(event){
+    event.target.parentElement.remove()
 }
 

@@ -10,41 +10,42 @@
 </head>
 <body>
     <!-- Navbar  -->
-    <nav class="navbar navbar-fixed navbar-expand-lg navbar-light bg-dark ">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark ">
         <div class="container-fluid">
-          <a class="navbar-brand text-white" href="#">Form</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <a class="navbar-brand text-white fs-2" href="#">Form</a>
+          <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="mx-auto"></div>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active text-white" aria-current="page" href="#bannerimage">Home</a>
+                <a class="nav-link active text-white align-items-center fs-4" aria-current="page" href="#bannerimage">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white" href="#signupform">Signup</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white" href="#loginform">Login</a>
+                <a class="nav-link text-white"href="#signupform">
+                <button class="btn btn-outline-success  my-2 my-sm-0" type="submit">Signup</button></a>
               </li>
              
+             
+             
               <li class="nav-item">
-                <a class="nav-link text-white" href="#" >Todo-List</a>
+                <a class="nav-link text-white"href="#logincontainer">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button></a>
               </li>
             </ul>
            
           </div>
         </div>
       </nav>
-      <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center" id="bannerimage">
+      <div class="banner-image w-100  d-flex justify-content-center align-items-center" style="height:100vh" id="bannerimage">
       <div class="content text-center">
         <h1 class="text-black">Form Validation</h1>
       </div>
     </div>
      <!--signup section-->
-     <div class="container" id="signupform">
-        <form id="form"  class="mx-auto" style="width: 500px;">
+     <div class="container-fluid" style="height:100vh" id="signupform">
+        <form id="form"  class="mx-auto" style="width: 500px; height: 80vh;">
             <h1 class="text-center p-2">Signup</h1>
             <div class="sform-group p-2">
               <label for="username" >Username</label>
@@ -69,12 +70,13 @@
                 <div class="error"></div>
               </div>
             <button type="submit" class="btn btn-primary w-100 p-2">Submit</button>
+            <p class="text-center">Already an user?<a href="#logincontainer">Login</a></p>
           </form>
      </div>
 
       <!--login section-->
-      <div class="container" id="loginform">
-        <form id="loginform"  class="mx-auto" style="width: 500px;">
+      <div class="container-fluid" style="height:100vh" id="logincontainer">
+        <form id="loginform"  class="mx-auto " style="width: 500px;height: 80vh; ">
             <h1 class="text-center p-2">Login</h1>
             <div class="lform-group p-2">
               <label for="lusername" >Username</label>
@@ -88,10 +90,20 @@
                 <input type="password" class="form-control" id="lpassword" name="lpassword">
                 <div class="error"></div>
             </div>
-            <button type="submit" class="btn btn-primary w-100 p-2">Submit</button>
+            <button type="submit" class="btn btn-primary w-100 mt-2">Submit</button>
           </form>
      </div>
-
+    <!--todolist section-->
+    <div class="container-fluid w-100"  style="height:100vh" id="todolistpage">
+      <div id="todowrap" style="height:80vh" >
+          <h2 class="justify-content-center">Todo List</h2>
+          <input type="text" id="todoinput">
+          <button id="add">Add</button>
+          <div id="todoList" class="bg-warning mt-2 w-25" style="height:50vh">
+              <p>Todo list</p>
+          </div>
+      </div>
+    </div>
 
     <script src="script.js">
 

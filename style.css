@@ -1,9 +1,15 @@
 .banner-image {
-    background-image: url('/background.avif');
+    background-image: url('background.avif');
     background-size: cover;
   }
+  .nav-item:hover{
+    border-bottom: 2px solid orange;
+  }
+
+  
 
   #signupform{
+    
     background-image: linear-gradient(to left top, #051937, #133660, #1d578d, #1f7abb, #12a0eb);
   }
   #form{
@@ -11,16 +17,50 @@
     background-color: antiquewhite;
     border-radius: 15px;
   }
-  .sform-group .error{
+  .sform-group .error,.lform-group .error{
     color:rgb(242, 18, 18);
     font-size:16px;
     margin-top: 5px;
 }
 
-.sform-group.success input{
+.sform-group.success input,.lform-group.success input{
     border-color: #0cc477;
 }
 
-.sform-group.error input{
+.sform-group.error input,.lform-group.error input{
     border-color:rgb(206, 67, 67);
+} 
+#loginform{
+   
+    background-color: #E4E3D3;
+    /* background-image: linear-gradient(to left top, #051937, #133660, #1d578d, #1f7abb, #12a0eb); */
+    border-radius: 15px;
+    
+  }
+
+#logincontainer{
+  background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+
+
+
+/*.................todo....................*/
+#todolistpage{
+  background-color: #A0D2DB;
+}
+#todowrap{
+  
+  padding: 15px 20px 20px 15px;
+  background-color: #152614;
+  color: white;
+  height: 100vh;
+  border-radius: 20px;
+}
+input{
+  border-radius: 5px;
+  border: 2px solid black ;
+  margin-top:30px;
+  height:2.5em;
+  width:250px;
+  padding-left:10px;
 }
